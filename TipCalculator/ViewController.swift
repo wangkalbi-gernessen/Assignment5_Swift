@@ -50,10 +50,15 @@ class ViewController: UIViewController {
 
     @IBAction func enterBillAmount(_ sender: UITextField) {
         if sender.text?.isEmpty == false {
-            let value = Int(sender.text!)
-            let amount:Double = Double(value!) * Double(percentageSlider.value) / 100
-            let ans = String(format: "%.2f", arguments: [amount])
-            totalAmount.text = "$\(ans)"
+            let value = Double(billAmount.text!)
+            let amount: Double = value! * Double(percentageSlider.value / 100)
+            let fs = String(format: "%.2f", amount)
+            
+            // add comma to amount(Double)
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            let formattedNumber = numberFormatter.string(from: NSNumber(value: Double(fs)!))
+            totalAmount.text = "$\(formattedNumber!)"
         } else {
             totalAmount.text = "$00.00"
         }
@@ -66,10 +71,15 @@ class ViewController: UIViewController {
         percentageValue.text = "\(toString)%"
         
         if billAmount.text?.isEmpty == false {
-            let value = Int(billAmount.text!)
-            let amount:Double = Double(value!) * Double(percentageSlider.value) / 100
-            let ans = String(format: "%.2f", arguments: [amount])
-            totalAmount.text = "$\(ans)"
+            let value = Double(billAmount.text!)
+            let amount: Double = value! * Double(percentageSlider.value / 100)
+            let fs = String(format: "%.2f", amount)
+            
+            // add comma to amount(Double)
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            let formattedNumber = numberFormatter.string(from: NSNumber(value: Double(fs)!))
+            totalAmount.text = "$\(formattedNumber!)"
         }
     }
     
@@ -77,18 +87,13 @@ class ViewController: UIViewController {
         if billAmount.text?.isEmpty == false {
             let value = Double(billAmount.text!)
             let amount: Double = value! * Double(percentageSlider.value / 100)
-//            let numberFormatter = NumberFormatter()
-//            numberFormatter.numberStyle = .decimal
-//            numberFormatter.groupingSize = 3
-//            numberFormatter.groupingSeparator = ","
-//            let formattedNumber = numberFormatter.string(from: amount as NSNumber)!
-//            let toDouble = Double(formattedNumber)
-//            print(round(toDouble!*100)/100)
+            let fs = String(format: "%.2f", amount)
             
-            
-            let ans = String(format: "%.2f", arguments: [amount])
-            totalAmount.text = "$\(ans)"
+            // add comma to amount(Double)
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            let formattedNumber = numberFormatter.string(from: NSNumber(value: Double(fs)!))
+            totalAmount.text = "$\(formattedNumber!)"
         }
     }
 }
-
