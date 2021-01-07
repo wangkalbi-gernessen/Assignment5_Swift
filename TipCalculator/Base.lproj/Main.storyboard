@@ -45,7 +45,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="enterBillAmount:" destination="BYZ-38-t0r" eventType="editingChanged" id="0kK-kc-lQB"/>
+                                                    <action selector="enterBillAmount:" destination="BYZ-38-t0r" eventType="editingChanged" id="rdK-Ev-nOt"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Percentage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBT-wv-uwQ">

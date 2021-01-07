@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
     }
-    
+
     @IBAction func enterBillAmount(_ sender: UITextField) {
         if sender.text?.isEmpty == false {
             let value = Int(sender.text!)
